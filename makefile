@@ -24,3 +24,10 @@ buildtest:
 
 runtest:
 	./bin/testMain
+
+#build demo
+buildtest:
+	$(CC) $(CFLAGS) src/OTPDemo.c -Lbin -lonetimepad -I$(INC) -o bin/demo
+
+rundemo:
+	./bin/demo
