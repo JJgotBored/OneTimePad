@@ -16,7 +16,7 @@ $(BIN)OneTimePadAPI.o: $(SRC)OneTimePadAPI.c $(INC)OneTimePadAPI.h
 	$(CC) $(CFLAGS) -c -fpic -I$(INC) $(SRC)OneTimePadAPI.c -o $(BIN)OneTimePadAPI.o
 
 clean:
-	rm -rf $(BIN)*.o $(BIN)*.so $(BIN)testMain 
+	rm -rf $(BIN)*.o $(BIN)*.so $(BIN)testMain $(BIN)demo
 
 #build test harness
 buildtest:
@@ -26,7 +26,7 @@ runtest:
 	./bin/testMain
 
 #build demo
-buildtest:
+builddemo:
 	$(CC) $(CFLAGS) src/OTPDemo.c -Lbin -lonetimepad -I$(INC) -o bin/demo
 
 rundemo:
