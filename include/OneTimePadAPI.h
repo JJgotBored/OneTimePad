@@ -3,8 +3,9 @@
 
 #include<stdio.h>
 #include<string.h>
+#include<stdlib.h>
 
-typedef enum OTPErrorCode{ok, invalidName }OTPErrorCode;
+typedef enum OTPErrorCode{ok, nullName, nullKeyPointer }OTPErrorCode;
 
 typedef struct OTPKey{
     
@@ -16,6 +17,6 @@ typedef struct OTPKey{
 
 OTPErrorCode buildOTPKey(char* name, unsigned int seed, OTPKey** keyPointer );
 
-int freeOTPKey(OTPKey** keyPointer);
+OTPErrorCode freeOTPKey(OTPKey* keyPointer);
 
 #endif
