@@ -25,9 +25,14 @@ buildtest:
 runtest:
 	./bin/testMain
 
+memtest:
+	valgrind ./bin/testMain
+
 #build demo
 builddemo:
 	$(CC) $(CFLAGS) src/OTPDemo.c -Lbin -lonetimepad -I$(INC) -o bin/demo
 
 rundemo:
 	./bin/demo
+
+# export LD_LIBRARY_PATH=/home/jason/OneTimePad/bin
