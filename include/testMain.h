@@ -4,5 +4,6 @@
 #include<stdio.h>
 
 int testBuildOTPKEY();
+int testFreeOTKKey();
 
 #endif

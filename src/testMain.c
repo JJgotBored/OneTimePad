@@ -5,7 +5,8 @@
 int main(){
 
     testBuildOTPKEY();
-
+    testFreeOTKKey();
+    
     return 0;
 }
 
@@ -21,6 +22,16 @@ int testBuildOTPKEY(){
 
     free((*key)->name);
     free(*key);
+    free(key);
+
+    return 0;
+}
+
+int testFreeOTKKey(){
+    
+    OTPKey** key = (OTPKey**)(malloc(sizeof(OTPKey*)*1));
+    buildOTPKey("test", 5, key);
+    freeOTPKey(*key);
     free(key);
 
     return 0;
